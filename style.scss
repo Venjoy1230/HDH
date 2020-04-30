@@ -7,6 +7,20 @@ body{
 .container{
     display:flex;
     height: 100vh;
+    .background{
+        min-width:70% ;
+        background-image:url(images/LYCEE.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .titleContainer{
+            font-family: 'Roboto', sans-serif;
+            color:white;
+            padding: 100px 50px 100px 50px;
+            font-size: 32px;
+        }
+
+    }
     .login {
         display: flex;
         justify-content: center;
@@ -20,13 +34,15 @@ body{
                 font-family: 'Roboto', sans-serif;
             }
             .inputContainer{
-                margin:0 0 10px 0;
+                margin:0 0 50px 0;
                 input{
                     border:none;
                     border-bottom: 1px solid #323232;
                     outline:none;
                     font-family: 'Roboto', sans-serif;
                     transition: border-bottom 0.2s;
+                    padding: 5px 0;
+                    font-size: 16px;
                     &:focus{
                         border-bottom: 4px solid #135DE8
                     }
