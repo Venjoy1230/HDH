@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bot.css">
+    <title>Chatbot</title>
+</head>
+<body>
+  <h1>Chatbot</h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'connexion')">Problème de connexion</button>
+        <button class="tablinks" onclick="openCity(event, 'réseau')">Problème avec le réseau</button>
+        <button class="tablinks" onclick="openCity(event, 'materiel')">Problème avec votre materiel</button>
+        <button class="tablinks" onclick="openCity(event, 'autre')">Autre problème</button>
+    </div>
+
+  <div id="connexion" class="tabcontent">
+    <ul>
+      <li><a href="https://www.google.com/">Mot de passe oublié</a></li>
+      <li><a href="https://www.google.com/">Nom d'utilisateur oublié</a></li>
+      <li><a href="https://www.google.com/">Mot de passe oublié</a></li>
+      <li><a href="https://www.google.com/">Mot de passe oublié</a></li>
+      <li><a href="https://www.google.com/">Mot de passe oublié</a></li>
+      <li><a href="https://www.google.com/">Mot de passe oublié</a></li>
+      <li><a href="https://www.google.com/">Mot de passe oublié</a></li>
+      
+    </ul>
+  </div>
+  
+  <div id="réseau" class="tabcontent">
+    <ul>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter au réseau</a></li>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter à Mbn</a></li>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter à La Vie Scolaire</a></li>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter</a></li>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter</a></li>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter</a></li>
+      <li><a href="https://www.youtube.com/">Je n'arrive pas à me connecter</a></li>
+    </ul>
+    
+  </div>
+  
+  <div id="materiel" class="tabcontent">
+    <ul>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+      <li><a href="https://www.reddit.com/">Mon ordinateur est cassé</a></li>
+  </ul>
+  </div>
+
+  <div id="autre" class="tabcontent">
+    <h2>Votre problème n'est pas présent dans la liste :</h2>
+    <form>
+      <textarea id="message" rows="10" cols="70" placeholder="Entrer votre problème ici..."></textarea>
+      <br>
+      <label class="container">Urgent
+        <input type="radio" name="radio" >
+        <span class="checkmark"></span>
+      </label>
+      
+      <label class="container">Peu urgent
+        <input type="radio" name="radio">
+        <span class="checkmark"></span>
+      </label>
+      
+      <label class="container">Cela peut attendre
+        <input type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+      </label>
+     <br>
+     <br>
+      <button id="but" onclick="window.alert('Votre ticket a bien été crée');" ><h4>Créer mon ticket</h4></button>
+    </form>
+  </div>
+  <script src="bot.js"></script>
+</body>
+</html>
