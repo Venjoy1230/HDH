@@ -1,0 +1,337 @@
+	html, body
+	{
+		height: 100%;
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background: #1B1B1B url(images/overlay.png) repeat;
+		font-family: 'Varela Round', sans-serif;
+		font-size: 11pt;
+		font-weight: 400;
+		color: #000000;
+	}
+	
+	.container
+	{
+		margin: 0px auto;
+		width: 1200px;
+	}
+	
+	
+
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+	#logo
+	{
+		padding: 2em;
+		text-align: center;
+	}
+	
+	#logo h1
+	{
+		font-size: 3.5em;
+	}
+	
+	
+	#logo h1 a
+	{
+		color: #6C2A6A;
+	}
+
+	#logo a
+	{
+		text-decoration: none;
+	}
+	
+	#logo span
+	{
+		letter-spacing: 0.10em;
+		text-transform: uppercase;
+		font-size: 0.90em;
+		color: #3C3C3C;
+	}
+
+	#logo span a
+	{
+		color: #3C3C3C;
+	}
+	
+	#logo .icon
+	{
+		display: inline-block;
+		margin-bottom: 2em;
+		padding: 1em;
+		background: #6C2A6A;
+		border-radius: 50%;
+		font-size: 1.6em;
+		color: #FFF;
+	}
+	
+
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+
+	
+	#menu ul
+	{
+		text-align: center;
+	}
+	
+	#menu li
+	{
+		display: inline-block;
+	}
+	
+	#menu li a, #menu li span
+	{
+		display: inline-block;
+		margin-left: 0.50em;
+		padding: 1em 1.5em;
+		letter-spacing: 0.20em;
+		text-decoration: none;
+		font-size: 0.90em;
+		font-weight: 600;
+		text-transform: uppercase;
+		outline: 0;
+		color: #3C3C3C;
+	}
+	
+	
+	#menu .current_page_item a
+	{
+		border: 1px solid #3C3C3C;
+		border-radius: 4px;
+	}
+	
+
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+	#wrapper1
+	{
+		background: #FFF;
+	}
+
+	#wrapper2
+	{
+		background: rgb(94, 94, 247);
+	}
+
+	#wrapper3
+	{
+		overflow: hidden;
+		padding: 0em 0em 15em 0em;
+		background: #FFF;
+	}
+	
+	#wrapper4
+	{
+		overflow: hidden;
+		padding: 8em 0em 4em 0em;
+	}
+
+/*********************************************************************************/
+/* Welcome                                                                       */
+/*********************************************************************************/
+
+	#welcome
+	{
+		overflow: hidden;
+		width: 1000px;
+		padding: 8em 100px 8em 100px;
+		text-align: center;
+		color: rgba(255,255,255,0.4);
+	}
+	
+	#welcome .content
+	{
+		padding: 0em 8em;
+	}
+	
+	#welcome .title h2
+	{
+		color: rgba(255,255,255,1);
+	}
+	
+	#welcome a,
+	#welcome strong
+	{
+		color: rgba(255,255,255,0.6);
+	}
+
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+	#footer
+	{
+		padding: 8em 0em 5em 0em;
+		text-align: center;
+	}
+
+	
+	#footer .title h2
+	{
+		color: rgba(255,255,255,1);
+	}
+
+
+	#footer .title .byline
+	{
+		letter-spacing: normal;
+		text-transform: capitalize;
+		font-size: 1.6em;
+		color: rgba(255,255,255,0.2);
+	}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+	#copyright
+	{
+		overflow: hidden;
+		
+		border-top: 1px solid rgba(255,255,255,0.08);
+	}
+	
+	#copyright p
+	{
+		text-align: center;
+		color: rgba(255,255,255,0.4);
+	}
+
+
+/*********************************************************************************/
+/* Chatbot                                                               */
+/*********************************************************************************/
+
+
+	.tab {
+		overflow: hidden;
+		text-align: center;
+		border: 2px solid rgb(0, 0, 0);
+		background-color: #333;
+		display: block;
+		margin: 5% 22% 0 24%;
+		
+	  }
+	  
+	h1{
+	  text-align: center;
+	}
+	
+	  .tab button {
+		background-color: inherit;
+		float: left;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 14px 16px;
+		transition: 0.3s;
+		color: #f2f2f2;
+	  }
+	  
+	
+	  .tab button:hover {
+		background-color: rgb(94, 94, 247);
+		color: black
+	  }
+	  
+	
+	  .tab button.active {
+		background-color: rgb(94, 94, 247);
+	  }
+	  
+	
+	  .tabcontent {
+		display: none;
+		padding: 6px 12px;
+		border: 2px solid rgb(0, 0, 0);
+		border-top: none;
+		margin: 0% 22% 0 24%;
+	  }
+
+	  
+	 
+	  #connexion{
+		display: block;
+	  }
+	  
+	
+
+	 /* Customize the label (the container) */
+	#autre .container {
+		display: inline;
+		position: relative;
+		margin-left: 20px;
+		padding-left: 35px;
+		cursor: pointer;
+		font-size: 18px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	  }
+	
+	/* Hide the browser's default radio button */
+	#autre .container input {
+	  position: absolute;
+	  opacity: 0;
+	  cursor: pointer;
+	  height: 0;
+	  width: 0;
+	}
+	
+	/* Create a custom radio button */
+	#autre .checkmark {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  height: 20px;
+	  width: 20px;
+	  background-color: #eee;
+	  border-radius: 50%;
+	}
+	
+	/* On mouse-over, add a grey background color */
+	#autre .container:hover input ~ .checkmark {
+	  background-color: #ccc;
+	}
+	
+	/* When the radio button is checked, add a blue background */
+	#autre .container input:checked ~ .checkmark {
+	  background-color: rgb(94, 94, 247);
+	}
+	
+	/* Create the indicator (the dot/circle - hidden when not checked) */
+	#autre .checkmark:after {
+	  content: "";
+	  position: absolute;	
+	  display: none;
+	}
+	
+	/* Show the indicator (dot/circle) when checked */
+	#autre .container input:checked ~ .checkmark:after {
+	  display: block;
+	}
+	
+	/* Style the indicator (dot/circle) */
+	#autre .container .checkmark:after {
+	  top: 6.3px;
+	  left: 6.9px;
+	  width: 7px;
+	  height: 7px;
+	  border-radius: 50%;
+	  background: white;
+	}
