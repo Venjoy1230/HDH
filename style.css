@@ -20,9 +20,9 @@ body {
 
 .container .background .titleContainer {
   font-family: 'Roboto', sans-serif;
+  font-size: 32px;
   color: white;
   padding: 100px 50px 100px 50px;
-  font-size: 32px;
 }
 
 .container .login {
@@ -52,6 +52,25 @@ body {
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: #0095ff;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.container .login .loginContainer button:focus {
+  outline: 0;
+}
+
+.container .login .loginContainer button:hover {
+  background-color: #0077cc;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 
 .container .login .loginContainer .inputContainer {
@@ -59,14 +78,14 @@ body {
 }
 
 .container .login .loginContainer .inputContainer input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   border: none;
   border-bottom: 1px solid #323232;
-  outline: none;
-  font-family: 'Roboto', sans-serif;
   -webkit-transition: border-bottom 0.2s;
   transition: border-bottom 0.2s;
+  outline: none;
   padding: 5px 0;
-  font-size: 16px;
 }
 
 .container .login .loginContainer .inputContainer input:focus {

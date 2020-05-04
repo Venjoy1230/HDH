@@ -15,9 +15,9 @@ body{
 
         .titleContainer{
             font-family: 'Roboto', sans-serif;
+            font-size: 32px;
             color:white;
             padding: 100px 50px 100px 50px;
-            font-size: 32px;
         }
 
     }
@@ -32,17 +32,32 @@ body{
             button{
                 align-self: flex-end;
                 font-family: 'Roboto', sans-serif;
+                font-size:16px;
+                border:none;
+                border-radius:50px ;
+                background-color:#0095ff;
+                transition: background-color 0.2s;
+                color:white;
+                padding: 8px 16px;
+                cursor: pointer;
+                &:focus{
+                    outline:0;
+                }
+                &:hover{
+                    background-color:#0077cc;
+                    transition: background-color 0.2s;
+                }
             }
             .inputContainer{
                 margin:0 0 50px 0;
                 input{
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 16px;
                     border:none;
                     border-bottom: 1px solid #323232;
-                    outline:none;
-                    font-family: 'Roboto', sans-serif;
                     transition: border-bottom 0.2s;
+                    outline:none;
                     padding: 5px 0;
-                    font-size: 16px;
                     &:focus{
                         border-bottom: 4px solid #135DE8
                     }
