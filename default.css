@@ -147,28 +147,25 @@
 	{
 		overflow: hidden;
 		width: 1000px;
-		padding: 8em 100px 8em 100px;
+		padding: 4em 50px 4em 50px;
 		text-align: center;
 		color: rgba(255,255,255,0.4);
 	}
 	
-	#welcome .content
+	#welcome h1
 	{
-		padding: 0em 8em;
-	}
-	
-	#welcome .title h2
-	{
-		color: rgba(255,255,255,1);
-	}
-	
-	#welcome a,
-	#welcome strong
-	{
-		color: rgba(255,255,255,0.6);
+		color: #ffffff;
 	}
 
+	#welcome h2
+	{
+		color: #ffffff;
+	}
 
+	#welcome p
+	{
+		color: #ffffff;
+	}
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
@@ -334,4 +331,10 @@
 	  height: 7px;
 	  border-radius: 50%;
 	  background: white;
+	}
+
+	#wrapper3 p{
+		text-align: center;
+		text-decoration: underline;
+		font-size: 20px;
 	}

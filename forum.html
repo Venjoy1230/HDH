@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Forum HDH</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="forum.css">
+</head>
+
+<body>
+    <div id="wrapper1">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo"><img src="images/rober.png" alt="logo"></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html" accesskey="1" title="">Accueil</a></li>
+                        <li><a href="MonProfil.html" accesskey="2" title="">Mon profil</a></li>
+                        <li><a href="sdta.html" accesskey="3" title="">Tickets (Admin)</a></li>
+                        <li><a href="#" accesskey="4" title="">Mes Tickets</a></li>
+                        <li class="current_page_item "><a href="forum.html" accesskey="5" title="">Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="wrapper2">
+            <div id="welcome" class="container">
+                <div class="title">
+                    <h1>Forum</h1>
+                </div>
+                <div class="topnav">
+                    <a onclick="document.getElementById('id01').style.display='block'">Creer une discussion</a>
+                    <a id="mesdiscu" onclick="Mesdiscussion()">Mes discussion</a>
+                    <a id="tous" onclick="Mesdiscussion2()">Toutes les discussions</a>
+                    <input type="text" placeholder="Rechercher...">
+                </div>
+            </div>
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <form class="modal-content">
+                    <div class="container3">
+                        <h1>Créer une nouvelle discussion</h1>
+                        <hr>
+                        <label for="sujet"><b>Sujet</b></label>
+                        <input type="text" id="sujet" placeholder="Saisir le titre du sujet" name="sujet" required>
+
+
+                        <label for="message"><b>Message</b></label>
+                        <textarea id="message" required rows="10" cols="70" placeholder="Pour que les discussions restent agréables, nous vous remercions de rester poli en toutes circonstances. En postant sur nos espaces, vous vous engagez à en respecter la charte d'utilisation. Tout message discriminatoire ou incitant à la haine sera supprimé et son auteur sanctionné."></textarea>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
+                            <button id="soum" onclick="getValue(sujetDisscution, dateDisscution)" type="button">Soumettre</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="wrapper3">
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:60%;">Sujet</th>
+                    <th style="width:13%;">Nom</th>
+                    <th style="width:13%;">Date</th>
+                    <th style="width:13%;">Statut</th>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div id="copyright">
+        <p>&copy;All rights reserved. | Jean Jacques Henner | Design by Henner student </a>.</p>
+    </div>
+    <script src="Test.js"></script>
+</body>
+
+</html>
