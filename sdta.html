@@ -1,107 +1,194 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Suivi des tickets (admin)</title>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
-	<link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-	<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-  <link rel="stylesheet" href="sdta.css" type="text/css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Suivi des tickets (admin)</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="sdta.css" type="text/css" media="all" />
 
 
 </head>
+
 <body>
-  <div id="wrapper1">
-    <div id="header-wrapper">
-      <div id="header" class="container">
-        <div id="logo"><img src="images/logo.png" alt="logo"></span>
-           </div>
-        <div id="menu">
-          <ul>
-            <li ><a href="index.html" accesskey="1" title="">Accueil</a></li>
-            <li><a href="#" accesskey="2" title="">Mon profil</a></li>
-            <li class="current_page_item"><a href="sdta.html" accesskey="3" title="">Tickets (Admin)</a></li>
-            <li><a href="mes-tickets.html" accesskey="4" title="">Mes Tickets</a></li>
-            <li><a href="#Forum" accesskey="5" title="">Forum</a></li>
-          </ul>
+    <div id="wrapper1">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo"><img src="images/rober.png" alt="logo"></span>
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html" accesskey="1" title="">Accueil</a></li>
+                        <li><a href="MonProfil.html" accesskey="2" title="">Mon profil</a></li>
+                        <li class="current_page_item"><a href="sdta.html" accesskey="3" title="">Tickets (Admin)</a></li>
+                        <li><a href="mes-tickets.html" accesskey="4" title="">Mes Tickets</a></li>
+                        <li><a href="forum.html" accesskey="5" title="">Forum</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div id="wrapper2">
+            <div id="welcome" class="container">
+                <div class="title">
+                    <h2>Tickets</h2>
+                    <p>Vous retrouverez ici, une liste de tous les tickets formulés par les élèves</p>
+                </div>
+            </div>
+            <div id="wrapper3">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher...">
+                <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <form class="modal-content">
+                        <div class="container3">
+                            <div class="clearfix">
+                                <button type="button" onclick="encours()" class="cancelbtn">En cours</button>
+                                <button id="soum" onclick="resol()" type="button">Résolu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <table id="myTable">
+                    <tr class="header">
+                        <th style="width:2%;">Etat</th>
+                        <th style="width:5%;">Numéro de ticket</th>
+                        <th style="width:20%;">Nom</th>
+                        <th style="width:30%;">Objet</th>
+                        <th style="width:30%;">Thème</th>
+                        <th style="width:10%;">Date</th>
+                        <th style="width:10%;">Date de résolution</th>
+                        <th style="width:10%;">Priorité</th>
+                    </tr>
+                    <tr onclick="document.getElementById('id01').style.display='block'">
+                        <td>
+
+                            <svg id="encours" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z"/>
+                              <path fill-rule="evenodd" d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z"/>
+                              <path fill-rule="evenodd" d="M6.332 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2.072l.307-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3.391l.941-1zM4.45 6H2v4h1.313a1.5 1.5 0 0 1-.405-2.361L4.45 6zm.976 5l-.308 1H6.96l.21-.224h.001l.73-.776H6.53l-.085.09.028-.09H5.426zm1.354-1H5.733l.257-.833H4a.5.5 0 0 1-.364-.843l.793-.843L5.823 6h1.373L5.157 8.167h1.51a.5.5 0 0 1 .478.647L6.78 10zm.69 0h1.374l1.394-1.482.793-.842a.5.5 0 0 0-.364-.843h-1.99L8.933 6H7.887l-.166.54-.199.646A.5.5 0 0 0 8 7.833h1.51L7.47 10zm.725-5H9.24l.308-1H7.706l-.942 1h1.374l.085-.09-.028.09zm2.4-1l-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.405zm-.378 6H12V8.02a1.499 1.499 0 0 1-.241.341L10.217 10zM12 6.646V6h-.646a1.5 1.5 0 0 1 .646.646z"/>
+                            </svg>
+                            <svg id="resol" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/>
+                              <path d="M2 6h10v4H2V6zm12.5 3.5a1.5 1.5 0 0 0 0-3v3z"/>
+                            </svg>
+                            <svg id="attente" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/>
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z"/>
+                            </svg>
+
+                        </td>
+                        <td>1 </td>
+                        <td>Jean </td>
+                        <td>Probleme</td>
+                        <td>Problème de connexion </td>
+                        <td>26/03/2020</td>
+                        <td>26/03/2020</td>
+                        <td>Ca peut attendre</td>
+                    </tr>
+                    <tr onclick="document.getElementById('id01').style.display='block'">
+                        <td>
+
+                            <svg id="encours" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
+                              <path fill-rule="evenodd"
+                                d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z" />
+                              <path fill-rule="evenodd"
+                                d="M6.332 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2.072l.307-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3.391l.941-1zM4.45 6H2v4h1.313a1.5 1.5 0 0 1-.405-2.361L4.45 6zm.976 5l-.308 1H6.96l.21-.224h.001l.73-.776H6.53l-.085.09.028-.09H5.426zm1.354-1H5.733l.257-.833H4a.5.5 0 0 1-.364-.843l.793-.843L5.823 6h1.373L5.157 8.167h1.51a.5.5 0 0 1 .478.647L6.78 10zm.69 0h1.374l1.394-1.482.793-.842a.5.5 0 0 0-.364-.843h-1.99L8.933 6H7.887l-.166.54-.199.646A.5.5 0 0 0 8 7.833h1.51L7.47 10zm.725-5H9.24l.308-1H7.706l-.942 1h1.374l.085-.09-.028.09zm2.4-1l-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.405zm-.378 6H12V8.02a1.499 1.499 0 0 1-.241.341L10.217 10zM12 6.646V6h-.646a1.5 1.5 0 0 1 .646.646z" />
+                            </svg>
+                            <svg id="resol" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
+                              <path d="M2 6h10v4H2V6zm12.5 3.5a1.5 1.5 0 0 0 0-3v3z" />
+                            </svg>
+                            <svg id="attente" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
+                            </svg>
+
+                        </td>
+                        <td>2 </td>
+                        <td>Alain</td>
+                        <td>Mon ordi s'allume pas</td>
+                        <td>Problème de connexion </td>
+                        <td>18/09/2020</td>
+                        <td>26/03/2020</td>
+                        <td>Urgent</td>
+                    </tr>
+                    <tr onclick="document.getElementById('id01').style.display='block'">
+                        <td>
+
+                            <svg id="encours" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
+                              <path fill-rule="evenodd"
+                                d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z" />
+                              <path fill-rule="evenodd"
+                                d="M6.332 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2.072l.307-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3.391l.941-1zM4.45 6H2v4h1.313a1.5 1.5 0 0 1-.405-2.361L4.45 6zm.976 5l-.308 1H6.96l.21-.224h.001l.73-.776H6.53l-.085.09.028-.09H5.426zm1.354-1H5.733l.257-.833H4a.5.5 0 0 1-.364-.843l.793-.843L5.823 6h1.373L5.157 8.167h1.51a.5.5 0 0 1 .478.647L6.78 10zm.69 0h1.374l1.394-1.482.793-.842a.5.5 0 0 0-.364-.843h-1.99L8.933 6H7.887l-.166.54-.199.646A.5.5 0 0 0 8 7.833h1.51L7.47 10zm.725-5H9.24l.308-1H7.706l-.942 1h1.374l.085-.09-.028.09zm2.4-1l-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.405zm-.378 6H12V8.02a1.499 1.499 0 0 1-.241.341L10.217 10zM12 6.646V6h-.646a1.5 1.5 0 0 1 .646.646z" />
+                            </svg>
+                            <svg id="resol" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
+                              <path d="M2 6h10v4H2V6zm12.5 3.5a1.5 1.5 0 0 0 0-3v3z" />
+                            </svg>
+                            <svg id="attente" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
+                            </svg>
+
+                        </td>
+                        <td>3 </td>
+                        <td>Bertrand</td>
+                        <td>Mot de passe Mbn oublié</td>
+                        <td>Problème avec votre matériel </td>
+                        <td>05/02/2020</td>
+                        <td>26/03/2020</td>
+                        <td>Urgent</td>
+                    </tr>
+                    <tr onclick="document.getElementById('id01').style.display='block'">
+                        <td>
+
+                            <svg id="encours" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
+                              <path fill-rule="evenodd"
+                                d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z" />
+                              <path fill-rule="evenodd"
+                                d="M6.332 4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2.072l.307-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3.391l.941-1zM4.45 6H2v4h1.313a1.5 1.5 0 0 1-.405-2.361L4.45 6zm.976 5l-.308 1H6.96l.21-.224h.001l.73-.776H6.53l-.085.09.028-.09H5.426zm1.354-1H5.733l.257-.833H4a.5.5 0 0 1-.364-.843l.793-.843L5.823 6h1.373L5.157 8.167h1.51a.5.5 0 0 1 .478.647L6.78 10zm.69 0h1.374l1.394-1.482.793-.842a.5.5 0 0 0-.364-.843h-1.99L8.933 6H7.887l-.166.54-.199.646A.5.5 0 0 0 8 7.833h1.51L7.47 10zm.725-5H9.24l.308-1H7.706l-.942 1h1.374l.085-.09-.028.09zm2.4-1l-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.405zm-.378 6H12V8.02a1.499 1.499 0 0 1-.241.341L10.217 10zM12 6.646V6h-.646a1.5 1.5 0 0 1 .646.646z" />
+                            </svg>
+                            <svg id="resol" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
+                              <path d="M2 6h10v4H2V6zm12.5 3.5a1.5 1.5 0 0 0 0-3v3z" />
+                            </svg>
+                            <svg id="attente" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd"
+                                d="M12 5H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z" />
+                              <path d="M14.5 9.5a1.5 1.5 0 0 0 0-3v3z" />
+                            </svg>
+
+                        </td>
+                        <td>4 </td>
+                        <td>Virchiale</td>
+                        <td>Mkai</td>
+                        <td>Problème avec le réseau </td>
+                        <td>21/12/2003</td>
+                        <td>26/03/2020</td>
+                        <td>Ca peut attendre</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
-
-	<div id="wrapper2">
-		<div id="welcome" class="container">
-			<div class="title">
-				<h2>Help Desk Henner</h2>
-  </div>
- </div>
-	<div id="wrapper3">
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher...">
-
-  <table id="myTable">
-    <tr class="header">
-      <th style="width:2%;">Résolu</th>
-      <th style="width:28%;">Nom</th>
-      <th style="width:50%;">Objet</th>
-      <th style="width:10%;">Date</th>
-      <th style="width:10%;">Priorité</th>
-    </tr>
-    <tr>
-      <td> 
-        <label class="container1">
-          <input type="checkbox" >
-          <span class="checkmark"></span>
-          </label>
-      </td>
-      <td onclick="window.open('https://www.google.com/')">Jean </td>
-      <td onclick="window.open('https://www.google.com/')">Probleme</td>
-      <td onclick="window.open('https://www.google.com/')">26/03/2020</td>
-      <td onclick="window.open('https://www.google.com/')">Ca peut attendre</td>
-    </tr>
-    <tr >
-      <td> 
-        <label class="container1">
-          <input type="checkbox" >
-          <span class="checkmark"></span>
-          </label>
-      </td>
-      <td onclick="window.open('https://www.google.com/')">Alain</td>
-      <td onclick="window.open('https://www.google.com/')">Mon ordi s'allume pas</td>
-      <td onclick="window.open('https://www.google.com/')">18/09/2020</td>
-      <td onclick="window.open('https://www.google.com/')">Urgent</td>
-    </tr>
-    <tr>
-      <td> 
-        <label class="container1">
-          <input type="checkbox" >
-          <span class="checkmark"></span>
-          </label>
-      </td>
-      <td onclick="window.open('https://www.google.com/')">Bertrand</td>
-      <td onclick="window.open('https://www.google.com/')">Mot de passe Mbn oublié</td>
-      <td onclick="window.open('https://www.google.com/')">05/02/2020</td>
-      <td onclick="window.open('https://www.google.com/')">Urgent</td>
-    </tr>
-    <tr>
-      <td> 
-        <label class="container1">
-        <input type="checkbox" >
-        <span class="checkmark"></span>
-        </label>
-      </td>
-      <td  onclick="window.open('https://www.google.com/')">Virchiale</td>
-      <td  onclick="window.open('https://www.google.com/')">Mkai</td>
-      <td  onclick="window.open('https://www.google.com/')">21/12/2003</td>
-      <td  onclick="window.open('https://www.google.com/')">Ca peut attendre</td>
-    </tr>
-  </table>
-	</div>
-</div>
-</div>
-<div id="copyright" >
-	<p>&copy;All rights reserved. | Jean Jacques Henner | Design by Henner student </a>.</p>
-</div>
-<script src="bot.js"></script>
+    <div id="copyright">
+        <p>&copy;All rights reserved. | Jean Jacques Henner | Design by Henner students</a>.</p>
+    </div>
+    <script src="bot.js"></script>
+    <script src="Resol.js"></script>
 </body>
+
 </html>
