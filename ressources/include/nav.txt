@@ -1,0 +1,45 @@
+<?php
+session_start();
+if(empty($_SESSION['username'])){
+	header('Location: index.php');
+	}
+else{
+	$user = $_SESSION['username'];
+	$nom = $_SESSION['nom'];
+	$prenom = $_SESSION['prenom'];
+	$role = $_SESSION['role'];
+}
+
+?>
+
+
+<div id="wrapper1">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo"><img src="ressources/images/logo.png" alt="logo" height="150px;"></span>
+				 </div>
+			<div id="menu">
+				<ul>
+				  <?php
+					if ($role==0) {
+						echo '<li><a href="accueil.php" accesskey="1">Accueil</a></li>
+						<li><a href="monprofil.php" accesskey="2">Mon profil</a></li>
+						<li><a href="mes-tickets.php" accesskey="4">Mes Tickets</a></li>
+						<li><a href="forum.php" accesskey="5">Forum</a></li>
+						<li><a href="discussion.php" accesskey="5">Discussions</a></li>
+						<li><a href="index.php?deconnexion=true" accesskey="6">Se déconnecter</a></li>';
+					}
+					elseif ($role==1)	{
+						echo '
+						<li><a href="accueil.php" accesskey="1">Accueil</a></li>
+						<li><a href="tickets-admin.php" accesskey="3">Tickets (Admin)</a></li>
+						<li><a href="index.php?deconnexion=true" accesskey="6">Statistiques</a></li>
+						<li><a href="forum.php" accesskey="5">Forum</a></li>
+						<li><a href="index.php?deconnexion=true" accesskey="6">Se déconnecter</a></li>';
+
+
+					} ?>
+				</ul>
+			</div>
+		</div>
+	</div>

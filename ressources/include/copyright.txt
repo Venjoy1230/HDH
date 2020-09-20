@@ -1,0 +1,3 @@
+<div id="copyright" >
+	<p>&copy;All rights reserved. | Jean Jacques Henner | Design by Henner students</a>.</p>
+</div>

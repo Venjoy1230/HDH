@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+
+  }
+  
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 50px  25px;
+
+}
+
+.row {
+    margin: 0 -5px;
+    margin: 10px 10px 10px 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #444;
+  color: white;
+}
+
+.fa 
+{
+    font-size:1000px;
+    size: 100px;
+}
+.wrapper3{
+  flex-grow: 1;
+  background-color: white;
+}
+.tickeeeet{
+  margin: 10px;
+  height:15%;
+  width:15%;
+}
+.ticket{
+  border-width:1px;
+  border-style:solid;
+  border-color:black;
+  padding:0px 10px;
+  margin-right: auto;
+  width: 25em;
+  margin-top: 32px;
+  margin-left: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.date{
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px 0px;
+  background-color:#3e3e3e;
+  color:white;
+}
+.texte{
+  margin-right: auto;
+}
