@@ -1,90 +1,117 @@
-* {
-    box-sizing: border-box;
-
-  }
-  
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 50px  25px;
-
+.register {
+    background: -webkit-linear-gradient(left, rgb(94, 94, 247), #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
 }
 
-.row {
-    margin: 0 -5px;
-    margin: 10px 10px 10px 10px;
+.register-left {
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.register-left input {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #383d41;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
 }
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-  }
+.register-right {
+    background: #f8f9fa;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
 }
 
-/* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  text-align: center;
-  background-color: #444;
-  color: white;
+.register-left img {
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite alternate;
+    animation: mover 1s infinite alternate;
 }
 
-.fa 
-{
-    font-size:1000px;
-    size: 100px;
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
-.Identite{
-  display:flex;
-  padding-bottom: ;
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
 }
 
+.register-left p {
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
 
+.register .register-form {
+    padding: 10%;
+    margin-top: 10%;
+}
 
+.btnRegister {
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: rgb(94, 94, 247);
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
 
+.register .nav-tabs {
+    margin-top: 3%;
+    border: none;
+    background: rgb(94, 94, 247);
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
 
-/* Stats Admin */
-  .Statistiques
-  {
-    padding: 10px 50px 10px 50px;
+.register .nav-tabs .nav-link {
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
 
-  }
+.register .nav-tabs .nav-link:hover {
+    border: none;
+}
 
-  /* Make sure that padding behaves as expected */
-  * {box-sizing:border-box}
+.register .nav-tabs .nav-link.active {
+    width: 100px;
+    color: rgb(94, 94, 247);
+    border: 2px solid rgb(94, 94, 247);
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
 
-  /* Container for skill bars */
-  .container1 {
-    width: 100%; /* Full width */
-    background-color: #ddd; /* Grey background */
-  }
-
-  .stats {
-    text-align: right; /* Right-align text */
-    padding-top: 10px; /* Add top padding */
-    padding-bottom: 10px; /* Add bottom padding */
-    color: white; /* White text color */
-  }
-
-  .mdp {width: 90%; background-color: #4CAF50;} /* Green */
-  .casse {width: 80%; background-color: #2196F3;} /* Blue */
-  .reseau {width: 65%; background-color: #f44336;} /* Red */
-  .autres {width: 60%; background-color: #808080;} /* Dark Grey */
-
-  #wrapper3
-	{
-		overflow: hidden;
-		padding: 0em 0em 5em 0em;
-		background: #FFF;
+.register-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}

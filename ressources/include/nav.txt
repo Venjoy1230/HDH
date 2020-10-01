@@ -4,38 +4,127 @@ if(empty($_SESSION['username'])){
 	header('Location: index.php');
 	}
 else{
-	$user = $_SESSION['username'];
-	$nom = $_SESSION['nom'];
-	$prenom = $_SESSION['prenom'];
-	$role = $_SESSION['role'];
+	$user 			= $_SESSION['username'];
+	$role 			= $_SESSION['role'];
+	$id					= $_SESSION['User_id'];
+	$nom 				= $_SESSION['infos']['nom'];
+	$prenom 		= $_SESSION['infos']['prenom'];
+	$date_naiss = $_SESSION['infos']['datenaiss'];
+	$lieu_naiss = $_SESSION['infos']['lieunaiss'];
+	$dep_naiss	= $_SESSION['infos']['depnaiss'];
+	$parent1 		= $_SESSION['infos']['parent1'];
+	$parent2 		= $_SESSION['infos']['parent2'];
+	$mail 			= $_SESSION['infos']['mail'];
+	$adresse 		= $_SESSION['infos']['adresse'];
+	$ville 			= $_SESSION['infos']['ville'];
+	$dep 				= $_SESSION['infos']['code_post'];
+
 }
 
 ?>
 
 
 <div id="wrapper1">
+<div class="dropdown">
+				<button onclick="myFunction()" class="dropbtn"><?php echo "$prenom 	$nom"; ?> <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+</svg></button>
+			<div id="myDropdown" class="dropdown-content">
+				<a href="monprofil.php">Mon Profil </a>
+				<a href="index.php?deconnexion=true">Se déconnecter</a>
+			</div>
+			</div>
+			<style>
+.dropbtn {
+  background-color:rgb(94, 94, 247);
+  color: white;
+  padding: 16px;
+  margin-left:5px;
+  margin-top:5px;
+  border-radius:15px ;
+  font-size: 16px;
+  border:none;
+  cursor: pointer;
+}
+.dropbtn:focus{
+	outline:0;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgb(94, 94, 247);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  margin:5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+
+
+<script>
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 	<div id="header-wrapper">
 		<div id="header" class="container">
+
+
 			<div id="logo"><img src="ressources/images/logo.png" alt="logo" height="150px;"></span>
 				 </div>
 			<div id="menu">
 				<ul>
 				  <?php
-					if ($role==0) {
+					if ($role==3) {
 						echo '<li><a href="accueil.php" accesskey="1">Accueil</a></li>
-						<li><a href="monprofil.php" accesskey="2">Mon profil</a></li>
 						<li><a href="mes-tickets.php" accesskey="4">Mes Tickets</a></li>
-						<li><a href="forum.php" accesskey="5">Forum</a></li>
-						<li><a href="discussion.php" accesskey="5">Discussions</a></li>
-						<li><a href="index.php?deconnexion=true" accesskey="6">Se déconnecter</a></li>';
+						<li><a href="forum.php" accesskey="5">Forum</a></li>';
 					}
-					elseif ($role==1)	{
+					elseif ($role==0)	{
 						echo '
 						<li><a href="accueil.php" accesskey="1">Accueil</a></li>
 						<li><a href="tickets-admin.php" accesskey="3">Tickets (Admin)</a></li>
-						<li><a href="index.php?deconnexion=true" accesskey="6">Statistiques</a></li>
-						<li><a href="forum.php" accesskey="5">Forum</a></li>
-						<li><a href="index.php?deconnexion=true" accesskey="6">Se déconnecter</a></li>';
+						<li><a href="statistiques" accesskey="6">Statistiques</a></li>
+						<li><a href="forum.php" accesskey="5">Forum</a></li>';
 
 
 					} ?>
@@ -43,3 +132,4 @@ else{
 			</div>
 		</div>
 	</div>
+<script src="ressources/js/dropdown.js"></script>
